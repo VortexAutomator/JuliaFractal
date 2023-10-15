@@ -33,9 +33,10 @@ function drawJulia(canvas, ctx, cx, cy) {
     const moveY = 0;
 
     const maxIter = 300;
+    const pixelStep = 2; // Drawing every other pixel
 
-    for (let x = 0; x < width; x++) {
-        for (let y = 0; y < height; y++) {
+    for (let x = 0; x < width; x += pixelStep) {
+        for (let y = 0; y < height; y += pixelStep) {
             let zx = 1.5 * (x - width / 2) / (0.5 * zoom * width) + moveX;
             let zy = (y - height / 2) / (0.5 * zoom * height) + moveY;
             let i = maxIter;
@@ -49,7 +50,7 @@ function drawJulia(canvas, ctx, cx, cy) {
             
             const color = getColor(i);
             ctx.fillStyle = color;
-            ctx.fillRect(x, y, 1, 1);
+            ctx.fillRect(x, y, pixelStep, pixelStep);  // Adjusted to pixelStep
         }
     }
 }
@@ -64,5 +65,4 @@ function getColor(iterations) {
 
     return `rgb(${r},${g},${b})`;
 }
-
 
