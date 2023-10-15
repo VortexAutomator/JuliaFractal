@@ -39,4 +39,3 @@ function drawJuliaFractal(ctx, width, height) {
         }
     }
 }
-
