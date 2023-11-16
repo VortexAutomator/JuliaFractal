@@ -1,6 +1,6 @@
 function showJuliaFractal() {
-    const popupWidth = 600;
-    const popupHeight = 600;
+    const popupWidth = 700;
+    const popupHeight = 700;
     const popup = window.open('', '', `width=${popupWidth},height=${popupHeight}`);
     
     popup.document.write('<canvas id="fractalCanvas" width="600" height="600"></canvas>');
